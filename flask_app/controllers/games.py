@@ -42,6 +42,8 @@ def create_game():
 
 @app.route('/game')
 def live_game():
+    if 'user_id' not in session:
+        return redirect('/')
     return render_template('live_game.html')
 
 @app.route('/end', methods=['POST'])

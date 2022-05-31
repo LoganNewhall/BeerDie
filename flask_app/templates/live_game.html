@@ -29,8 +29,23 @@
                 <h5 id="team1_points">0 points</h5>
             </div>
             <div>
-                <button  onclick="addTeam1()"><strong>+</strong></button>
-                <button onclick="subtractTeam1()"><strong>-</strong></button>
+                <div>
+                    <h5>{{user['f_name']}}</h5>
+                    <button  onclick="addTeam1()"><strong>+1</strong></button>
+                    <button onclick="sinkTeam1()"><strong>SINK!</strong></button>
+                    <button onclick="cupHitTeam1()"><strong>Cup Hit</strong></button>
+                    <button onclick="selfSinkTeam1()"><Strong>Self-Sink :(</Strong></button>
+                </div>
+                <div>
+                    <h5>{{game['u2.f_name']}}</h5>
+                    <button  onclick="addTeam1()"><strong>+1</strong></button>
+                    <button onclick="sinkTeam1()"><strong>SINK!</strong></button>
+                    <button onclick="cupHitTeam1()"><strong>Cup Hit</strong></button>
+                    <button onclick="selfSinkTeam1()"><Strong>Self-Sink :(</Strong></button>
+                </div>
+            </div>
+            <div>
+                <p>Accidental point? Click <button onclick="subtractTeam1()"><strong>-</strong></button> to Subtract a Point</p>
             </div>
         </div>
         <div class="team">
@@ -38,9 +53,24 @@
             <div>
                 <h5 id="team2_points">0 points</h5>
             </div>
+            <div class="points">
+                <div>
+                    <h5>{{game['u3.f_name']}}</h5>
+                    <button onclick="addTeam2()"><strong>+1</strong></button>
+                    <button onclick="sinkTeam2()"><strong>SINK!</strong></button>
+                    <button onclick="cupHitTeam2()"><strong>Cup Hit</strong></button>
+                    <button onclick="selfSinkTeam2()"><Strong>Self-Sink :(</Strong></button>
+                </div>
+                <div>
+                    <h5>{{game['u4.f_name']}}</h5>
+                    <button onclick="addTeam2()"><strong>+1</strong></button>
+                    <button onclick="sinkTeam2()"><strong>SINK!</strong></button>
+                    <button onclick="cupHitTeam2()"><strong>Cup Hit</strong></button>
+                    <button onclick="selfSinkTeam2()"><Strong>Self-Sink :(</Strong></button>
+                </div>
+            </div>
             <div>
-                <button onclick="addTeam2()"><strong>+</strong></button>
-                <button onclick="subtractTeam2()"><strong>-</strong></button>
+                <p>Accidental point? Click <button onclick="subtractTeam2()"><strong>-</strong></button> to Subtract a Point</p>
             </div>
         </div>
     </div>

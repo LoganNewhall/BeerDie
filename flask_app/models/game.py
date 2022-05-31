@@ -36,6 +36,12 @@ class Game:
         details = connectToMySQL(cls.db).query_db(query, data)
         return details
 
+    @classmethod
+    def current_game(cls, data):
+        query = 'SELECT * FROM games LEFT JOIN games_has_users ON games.id = games_has_users.game_id LEFT JOIN users u1 ON games_has_users.team1_player1_id = u1.id LEFT JOIN users u2 ON games_has_users.team1_player2_id = u2.id LEFT JOIN users u3 ON games_has_users.team2_player1_id = u3.id LEFT JOIN users u4 ON games_has_users.team2_player2_id = u4.id WHERE %(user_id)s IN (games_has_users.team1_player1_id, games_has_users.team1_player2_id, games_has_users.team2_player1_id, games_has_users.team2_player2_id ) AND games_has_users.game_id = %(game_id)s;'
+        details = connectToMySQL(cls.db).query_db(query, data)
+        return details[0]
+
     @staticmethod
     def validate_players(users):
         is_valid = True

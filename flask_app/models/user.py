@@ -45,9 +45,10 @@ class User:
 
     @classmethod
     def update_user(cls, data):
-        query = 'UPDATE users SET f_name = %(f_name)s, l_name = %(l_name)s, email = %(email)s, username = %(username)s, rules = %(rules)s WHERE id = %(user_id)s;'
+        query = 'UPDATE users SET f_name = %(f_name)s, l_name = %(l_name)s, email = %(email)s, username = %(username)s, profile_pic = %(profile_pic)s, rules = %(rules)s WHERE id = %(user_id)s;'
         user = connectToMySQL(cls.db).query_db(query, data)
         return user
+
 
     @staticmethod
     def validate_user(user):

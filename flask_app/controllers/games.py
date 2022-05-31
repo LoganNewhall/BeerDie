@@ -44,7 +44,12 @@ def create_game():
 def live_game():
     if 'user_id' not in session:
         return redirect('/')
-    return render_template('live_game.html')
+    data = {
+        'user_id' : session['user_id'],
+        'game_id' : session['game_id']
+        
+    }
+    return render_template('live_game.html', user = User.get_user(data), game = Game.current_game(data))
 
 @app.route('/end', methods=['POST'])
 def get_post_json():    
